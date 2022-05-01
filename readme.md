@@ -73,8 +73,7 @@ Agregar reglas en [.eslintrc.js](https://github.com/Chaylander/FizzBuzz/blob/mas
 
 ```
  "linter": "node ./node_modules/eslint/bin/eslint.js .",
- "linter-fix": "node ./node_modules/eslint/bin/eslint.js . --fix" "linter": "node ./node_modules/eslint/bin/eslint.js .",
-  "linter-fix": "node ./node_modules/eslint/bin/eslint.js . --fix"
+ "linter-fix": "node ./node_modules/eslint/bin/eslint.js . --fix" 
 ```
 
 #### GitHub Actions - Automatización de Pruebas
