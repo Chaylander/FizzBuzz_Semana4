@@ -1,34 +1,84 @@
 # FizzBuzz
 
-### Practica 1 semana 4 LaunchX Backend Node Mission
+## Practica 1 semana 4 LaunchX Backend Node Mission
 
-Actualmente se necesita calcular cierta información de los explorers de LaunchX, de momento se ha desarrollado por una consultoría externa muy mala un script en JS para realizar esto. Sin embargo después de una evaluación interna se ha decidido refactorizar totalmente el proyecto, y esta es tu primer set de tareas a realizar.
+### 1. Dependencias.
 
-Este proyecto lee un archivo `explorers.json` que contiene una lista de explorers con información que necesitamos procesar. Con este script se logró:
+#### Node - Proyecto
 
-- Obtener la lista de explorers que solo están en node.
-- Obtener la cantidad de explorers que están en node.
-- Obtener la lista de usuarios de github de los explorers que están en node.
-- Se necesitó crear una validación llamada FizzBuzz, si el explorer tiene un score que sea divisible entre 3 (revisa cómo hacer esto), deberá tener un campo `trick` que diga `FIZZ`, cualquier otro caso el valor de este nuevo campo deberá ser el score mismo. Esta validación nos sirve porque necesitamos aplicarla a la lista de todos los explorers y saber cuáles son FIZZ.
-- Después necesitamos una validación muy similar pero para cuando el score sea divisible entre 5, entonces el valor del nuevo campo `trick` será BUZZ, cualquier otro caso el valor será el score.
-- Pero después volvimos a necesitar otro caso para cuando el valor del score fuera divisible entre 3 y también entre 5, entonces el valor del campo `trick` debe ser FIZZBUZZ, de lo contrario tendrá el valor del score.
+Proyecto en Node v16.14.2
 
-Actualmente las últimas 3 validaciones se corren independientemente y se juntan en un excel. Se necesita una misma validación que apliqué las tres reglas a toda la lista:
+Creación del proyecto con el comando  (generando el archivo package.json):
 
-- Si el campo score del explorer es divisible entre 3, entonces se agrega un campo nuevo llamado `trick` cuyo valor será `FIZZ`.
-- Si el campo score del explorer es divisible entre 5, entonces se agrega un campo nuevo llamado `trick` cuyo valor será `BUZZ`.
-- Si el campo score del explorer es divisible entre 3 y 5, entonces se agrega un campo nuevo llamado `trick` cuyo valor será `FIZZBUZZ`.
-- Si el campo score no es divisible por ninguna de las reglas anteriores, se agrega un campo nuevo llamado `trick` cuyo valor será el del score.
+- npm init
 
-Requerimientos:
+#### Git - Gestión de Versiones
 
-1. Refactorizar el script legado y rehacerlo con mucho cuidado ya que es información muy sensible.
-2. Crea un API para usar la funcionalidad anterior:
+El proyecto cuenta con gestión de versiones con Git. Creando un repositorio local y un reposotorio Remoto en GitHub.
 
-| Endpoint                                           | Request                                        | Response                                                                               |
-| -------------------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `localhost:3000/v1/explorers/:mission`           | `localhost:3000/v1/explorers/node`           | Deberás obtener la lista de explorers en la misión que enviaste (node o java)        |
-| `localhost:3000/v1/explorers/amount/:mission`    | `localhost:3000/v1/explorers/amount/node`    | Deberás obtener la cantidad de explorers según la misión que enviaste (node o java) |
-| `localhost:3000/v1/explorers/usernames/:mission` | `localhost:3000/v1/explorers/usernames/node` | Deberás obtener la lista de usernames en la misión que enviaste (node o java)        |
+Cada cambio en el proyecto se puede revisar en los [commits](https://github.com/Chaylander/FizzBuzz/commits/master).
 
-3. Nuevo requerimiento: Crea un endpoint para recibir un número y aplicar la validación del fizzbuzz. (ESTO SE DEBE CREAR DESDE CERO)
+Nota: En el proyecto tenemos .gitignore para no versionar el folder node_models.
+
+#### Jest - Pruebas Unitarias
+
+El proyecto tiene instalado Jest para la realización de pruebas unitarias.
+
+Para su instalacion y configuración, se corrieron los siguientes comandos:
+
+- npm install --save-dev jest
+
+Configuración en package.json para agregar el script para correr jest:
+
+- "test": "node ./node_modules/jest/bin/jest.js"
+
+Para ejecutar todas las pruebas unitarias:
+
+- npm test
+
+#### Express - API
+
+El proyeto tiene istalado express para crear la API solicitada.
+
+Comando para instalar express en el proyecto:
+
+- npm install express --save
+
+#### Linter
+
+Permite revisar el cógigo para darle estilo mediante reglas ya establecidas previamente.
+
+Comando para su instalación:
+
+- npm install eslint --save-dev
+
+Comando para la configuracion, general el archivo .eslintrc.js en el proyecto.
+
+- npm init @eslint/config
+
+Agregar reglas en [.eslintrc.js](https://github.com/Chaylander/FizzBuzz/blob/master/.eslintrc.js) y scripts de linter en package.json.
+
+ Reglas de linter:
+
+```
+   "rules": {
+        indent: ["error", 4],
+        "linebreak-style": ["error", "unix"],
+        quotes: ["error", "double"],
+        semi: ["error", "always"]
+    }
+```
+
+ Scripts de linter en package.json
+
+```
+ "linter": "node ./node_modules/eslint/bin/eslint.js .",
+ "linter-fix": "node ./node_modules/eslint/bin/eslint.js . --fix" "linter": "node ./node_modules/eslint/bin/eslint.js .",
+  "linter-fix": "node ./node_modules/eslint/bin/eslint.js . --fix"
+```
+
+#### GitHub Actions - Automatización de Pruebas
+
+Dentro del proyecto se crea el archivo test.yml en la ubicación .github/workflows para automatizar las pruebas unitarias en GitHub Actions cuando se realiza un push al repositorio remoto. En la parte de las actions nos notificará en caso de que alguna prueba no haya pasado. Funciona con la versión actual de jest por lo que no es necesario utilizar una anterior.
+
+[test.yml](https://github.com/Chaylander/FizzBuzz/blob/master/.github/workflows/test.yml)
