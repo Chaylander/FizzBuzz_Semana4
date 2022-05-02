@@ -17,5 +17,10 @@ describe("Test para ExplorerController", () => {
         const amountOfExplorersInMission = ExplorerController.getAmountOfExplorersByMission("node");
         expect(amountOfExplorersInMission).toContain(10);
     });
+    test("Requerimiento 4: Obtener FizzBuzz, FIZZ, BUZZ o el score dependiendo del numero", () => {
+        const explorer = {name: "Explorer1", score: 15};
+        const result = ExplorerController.getANumberToFizzBuzz(explorer.score);
+        expect(result).toBe("FIZZBUZZ");
+    });
 
 });
