@@ -16,7 +16,13 @@ app.get("/v1/explorers/:mission", (request, response) => {
     response.json(ExplorersInMission);
 });
 
+//Crea otro endpoint para regresar la cantidad de explorers según la misión que se envíe.
+app.get("/v1/explorers/amount/:mission", (request, response) => {
+    const mission = request.params.mission;
+    const amountOfExplorersInMission = ExplorerController.getAmountOfExplorersByMission(mission);
+    response.json(amountOfExplorersInMission);
+});
 
-app.listen(port, () => {
+app.listen(port, () => {//localhost:3000
     console.log(`FizzBuzz API in localhost:${port}`);
 });
