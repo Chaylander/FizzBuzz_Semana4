@@ -22,6 +22,20 @@ describe("Tests para FizzBuzzServices", () => {
         expect(explorer1.trick).toBe("FIZZBUZZ");
     });
 
+    test("Requerimiento 5: Requerimiento nuevo: Devolver FIZZBUZZ para la API", () => {
+        const explorer1 = {name: "Explorer1", score: 15};
+        expect(FizzBuzzService.applyValidationInNumber(explorer1.score)).toBe("FIZZBUZZ");
+    });
+    test("Requerimiento 6: Requerimiento nuevo: Devolver FIZZ para la API", () => {
+        const explorer1 = {name: "Explorer1", score: 3};
+        expect(FizzBuzzService.applyValidationInNumber(explorer1.score)).toBe("FIZZ");
+    });
+    test("Requerimiento 7: Requerimiento nuevo: Devolver BUZZ para la API", () => {
+        const explorer1 = {name: "Explorer1", score: 5};
+        expect(FizzBuzzService.applyValidationInNumber(explorer1.score)).toBe("BUZZ");
+    });
+
+
 
 
 });
