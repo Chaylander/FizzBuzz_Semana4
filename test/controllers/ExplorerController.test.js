@@ -15,7 +15,7 @@ describe("Test para ExplorerController", () => {
     });
     test("Requerimiento 3 la cantidad de explorers en la mision", () => {
         const amountOfExplorersInMission = ExplorerController.getAmountOfExplorersByMission("node");
-        expect(amountOfExplorersInMission).toBe(10);
+        expect(amountOfExplorersInMission).toContain(10);
     });
 
 });

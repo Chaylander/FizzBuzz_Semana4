@@ -6,7 +6,7 @@ class ExplorerService {
 
     static getAmountOfExplorersByMission(explorers, mission){
         const numberOfExplorersByMission = explorers.filter(explorer => explorer.mission === mission).length;
-        return numberOfExplorersByMission;
+        return ("There are " + numberOfExplorersByMission + " explorers in the " + mission + " mission");
 
     }
 
