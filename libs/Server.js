@@ -23,6 +23,13 @@ app.get("/v1/explorers/amount/:mission", (request, response) => {
     response.json(amountOfExplorersInMission);
 });
 
+//Crea el último endpoint para regresar la lista de usernames de los explorers filtrados por la misión.
+app.get("/v1/explorers/usernames/:mission", (request, response) => {
+    const mission = request.params.mission;
+    const UsernameOfExplorersInMission = ExplorerController.getUsernamesByMission(mission);
+    response.json(UsernameOfExplorersInMission); 
+});
+
 app.listen(port, () => {//localhost:3000
     console.log(`FizzBuzz API in localhost:${port}`);
 });
