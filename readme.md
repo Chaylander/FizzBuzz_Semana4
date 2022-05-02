@@ -44,6 +44,14 @@ Comando para instalar express en el proyecto:
 
 - npm install express --save
 
+Se agregó al package.json la siguiente linea, en scripts
+
+`"server": "node ./libs/server.js"`
+
+Para correr el server con npm, de la siguiente manera
+
+* npm run serve
+
 #### Linter
 
 Permite revisar el cógigo para darle estilo mediante reglas ya establecidas previamente.
