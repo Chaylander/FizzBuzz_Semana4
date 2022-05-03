@@ -1,4 +1,4 @@
-const ExplorerService = require("./../../libs/services/ExplorerServices");
+const ExplorerService = require("./../../lib/services/ExplorerServices");
 
 describe("Tests para explorersServices", () => {
     test("Requerimiento 1: Calcular todos los explorers en una mision", () => {

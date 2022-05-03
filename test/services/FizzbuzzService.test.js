@@ -1,4 +1,4 @@
-const FizzBuzzService = require("./../../libs/services/FizzbuzzService");
+const FizzBuzzService = require("./../../lib/services/FizzbuzzService");
 
 describe("Tests para FizzBuzzServices", () => {
     test("Requerimiento 1: Si el explorer no es divisible por 3, el score del explorer debera mantenerse igual y crear la funcion", () => {

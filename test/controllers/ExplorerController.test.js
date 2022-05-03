@@ -1,5 +1,5 @@
 //const ExplorerService = require("./../../libs/services/ExplorerServices");
-const ExplorerController = require("./../../libs/controllers/ExplorerController");
+const ExplorerController = require("./../../lib/controllers/ExplorerController");
 
 //const Reader = require("./../../libs/utils/Reader");
 //const explorers = Reader.readJsonFile("explorers.json");
