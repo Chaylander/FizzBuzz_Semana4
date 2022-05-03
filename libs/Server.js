@@ -30,6 +30,13 @@ app.get("/v1/explorers/usernames/:mission", (request, response) => {
     response.json(UsernameOfExplorersInMission); 
 });
 
+//PARTE 3 regresar Fizz", "Buzz", "Fizzbuzz" o el mismo número recibido.
+app.get("/v1/fizzbuzz/:score", (request, response) => {
+    const score = request.params.score;
+    const numberToFizzBuzz = ExplorerController.getANumberToFizzBuzz(score);
+    response.json({score: score, trick: numberToFizzBuzz});
+});
+
 app.listen(port, () => {//localhost:3000
     console.log(`FizzBuzz API in localhost:${port}`);
 });
