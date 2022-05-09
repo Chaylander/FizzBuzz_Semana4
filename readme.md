@@ -84,6 +84,22 @@ Agregar reglas en [.eslintrc.js](https://github.com/Chaylander/FizzBuzz/blob/mas
  "linter-fix": "node ./node_modules/eslint/bin/eslint.js . --fix" 
 ```
 
+#### Telegram bot
+
+Necesitas una cuenta de Telegram, el bot fue creado con Bot Father: [https://telegram.me/BotFather](https://telegram.me/BotFather)
+
+comando para instalar la dependencia bot telegram
+
+`npm install node-telegram-bot-api --save`
+
+Para correr el bot, se agrego a scripts de package.json, para correrlo:
+
+* npm run bot
+
+Script en package.json:
+
+`"bot": "node ./lib/bot.js"`
+
 #### GitHub Actions - Automatización de Pruebas
 
 Dentro del proyecto se crea el archivo test.yml en la ubicación .github/workflows para automatizar las pruebas unitarias en GitHub Actions cuando se realiza un push al repositorio remoto. En la parte de las actions nos notificará en caso de que alguna prueba no haya pasado. Funciona con la versión actual de jest por lo que no es necesario utilizar una anterior.
