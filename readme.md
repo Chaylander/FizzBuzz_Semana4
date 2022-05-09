@@ -1,6 +1,6 @@
 # FizzBuzz
 
-## Practica 1 semana 4 LaunchX Backend Node Mission
+## Practica 1 semana 4-5 LaunchX Backend Node Mission
 
 ### 1. Dependencias.
 
@@ -105,3 +105,6 @@ Script en package.json:
 Dentro del proyecto se crea el archivo test.yml en la ubicación .github/workflows para automatizar las pruebas unitarias en GitHub Actions cuando se realiza un push al repositorio remoto. En la parte de las actions nos notificará en caso de que alguna prueba no haya pasado. Funciona con la versión actual de jest por lo que no es necesario utilizar una anterior.
 
 [test.yml](https://github.com/Chaylander/FizzBuzz/blob/master/.github/workflows/test.yml)
+
+#### Funcionamiento en Telegram
+![Captura de pantalla 2022-05-08 211707](https://user-images.githubusercontent.com/66389606/167329785-35b6e1f1-5bed-4d79-90ff-56973cdf6cc0.png)
